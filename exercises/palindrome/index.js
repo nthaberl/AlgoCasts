@@ -25,7 +25,6 @@
 } */
 
 function palindrome(str){
-    //using .every(), an advanced array helper, does a boolean check at every index of an array
     //splitting the string at every character, then passing every index of the array into .every() as "char". "i" represents each index
     return str.split("").every((char, i) => {
         return char === str[str.length - i - 1] //-1 offsets the 0 indexing
