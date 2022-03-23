@@ -7,6 +7,29 @@
 //   palindrome("abba") === true
 //   palindrome("abcdefg") === false
 
-function palindrome(str) {}
+/* function palindrome(str) {
+    // let current = str[0]
+    for (let i = 0; i < str.length/2; i ++){
+        current = str[i];
+        if (current != str[str.length - 1 - i]){
+            return false
+        }
+    }
+    return true
+} */
+
+
+/* function palindrome(str) {
+    const reversed = str.split("").reverse().join("");
+    return str === reversed;
+} */
+
+function palindrome(str){
+    //using .every(), an advanced array helper, does a boolean check at every index of an array
+    //splitting the string at every character, then passing every index of the array into .every() as "char". "i" represents each index
+    return str.split("").every((char, i) => {
+        return char === str[str.length - i - 1] //-1 offsets the 0 indexing
+    })
+}
 
 module.exports = palindrome;
